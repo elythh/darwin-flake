@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }:
@@ -21,9 +22,11 @@ in
     users.users.${cfg.name} = {
       inherit (cfg) name;
       home = "/Users/${cfg.name}";
+      shell = pkgs.fish;
     }
     // cfg.extraOptions;
 
     system.primaryUser = cfg.name;
+    programs.fish.enable = true;
   };
 }
