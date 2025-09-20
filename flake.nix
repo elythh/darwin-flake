@@ -13,7 +13,7 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    neovim.url = "git+ssh://git@github.com/lalit64/nvim.git";
+    neovim.url = "github:elythh/nvim/nixcats";
     neovim.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix.url = "github:mic92/sops-nix";
