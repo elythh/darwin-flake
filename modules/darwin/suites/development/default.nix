@@ -23,6 +23,8 @@ in
 
     programs.terminal = {
       mise-en-place.enable = true;
+      k9s.enable = true;
+      direnv.enable = true;
       opencode.enable = if cfg.aiEnable then true else false;
     };
 
@@ -44,6 +46,9 @@ in
         nixfmt-rfc-style
         typescript
         zulu
+
+        kubectl
+        kubectx
       ]
       ++ (
         if cfg.dockerEnable then
