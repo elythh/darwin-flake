@@ -1,0 +1,8 @@
+---
+keys:
+  - &elyth age1yx86m88mcvpq2z069cj5a37hgmwnlpv4tzsk2ndya6equ0ra2gsq938vde
+creation_rules:
+  - path_regex: secrets/core/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+          - *elyth

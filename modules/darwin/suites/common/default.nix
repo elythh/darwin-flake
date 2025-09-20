@@ -24,7 +24,7 @@ in
 
     system.security.sops = {
       enable = true;
-      defaultSopsFile = lib.snowfall.fs.get-file "secrets/core/default.yaml";
+      defaultSopsFile = lib.snowfall.fs.get-file "secrets/core/secrets.yaml";
     };
 
     system = {

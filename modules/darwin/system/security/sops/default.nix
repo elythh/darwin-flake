@@ -1,9 +1,7 @@
 {
-  options,
   config,
   lib,
   namespace,
-  pkgs,
   ...
 }:
 with lib;
@@ -23,7 +21,9 @@ in
       defaultSopsFormat = "yaml";
 
       age = {
+        generateKey = true;
         keyFile = "${config.users.users.${config.user.name}.home}/.config/sops/age/keys.txt";
+        sshKeyPaths = [ "${config.users.users.${config.user.name}.home}/.ssh/id_default" ];
       };
     };
 
