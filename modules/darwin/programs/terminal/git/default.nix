@@ -102,6 +102,11 @@ in
       };
     };
 
+    sops.secrets.GITPRIVATETOKEN = {
+      path = "${config.users.users.${config.user.name}.home}/.gitcreds";
+      owner = config.users.users.elyth.name;
+    };
+
     home.programs.lazygit = {
       enable = true;
       settings = {
