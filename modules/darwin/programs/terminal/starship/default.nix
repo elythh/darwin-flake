@@ -52,7 +52,7 @@ in
           "$character"
         ];
         hostname = {
-          ssh_only = false;
+          ssh_only = true;
           style = "fg:purple";
           format = "[@$hostname ]($style)";
         };
