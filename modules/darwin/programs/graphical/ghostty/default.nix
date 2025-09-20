@@ -18,6 +18,7 @@ in
 
   config = mkIf cfg.enable {
     programs.terminal.starship.enable = true;
+    programs.terminal.zellij.enable = true;
 
     homebrew.casks = [
       "ghostty"
