@@ -48,6 +48,7 @@ in
         zulu
 
         kubectl
+        kubecolor
         kubectx
       ]
       ++ (
@@ -64,6 +65,7 @@ in
       casks = [
         "gitbutler"
         "yaak"
+        "keybase"
       ]
       ++ (
         if cfg.dockerEnable then

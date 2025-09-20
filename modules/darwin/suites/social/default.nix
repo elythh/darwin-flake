@@ -19,6 +19,7 @@ in
       "protonvpn"
       "vesktop"
       "slack"
+      "bitwarden"
     ];
   };
 }
