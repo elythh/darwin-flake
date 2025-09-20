@@ -26,7 +26,7 @@ in
 
     homebrew.casks = [
       "background-music"
-      "zen@twilight"
+      "zen"
     ];
 
     wms.aerospace = {
