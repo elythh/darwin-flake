@@ -19,7 +19,7 @@ in
   config = mkIf cfg.enable {
     home.programs.mise = {
       enable = true;
-      enableZshIntegration = true;
+      enableFishIntegration = true;
       globalConfig = {
         tools = {
           node = "latest";

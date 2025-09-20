@@ -13,7 +13,7 @@ in
   imports = [ (lib.snowfall.fs.get-file "modules/shared/suites/common/default.nix") ];
 
   config = mkIf cfg.enable {
-    programs.terminal.zsh = {
+    programs.terminal.fish = {
       enable = true;
     };
 

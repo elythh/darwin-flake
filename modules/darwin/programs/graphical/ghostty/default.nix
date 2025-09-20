@@ -26,10 +26,10 @@ in
     home.programs.ghostty = {
       enable = true;
       package = pkgs.emptyDirectory;
-      enableZshIntegration = true;
+      enableFishIntegration = true;
 
       settings = {
-        shell-integration = "zsh";
+        shell-integration = "fish";
         shell-integration-features = "no-cursor";
         background-opacity = 0.85;
         background-blur = 255;

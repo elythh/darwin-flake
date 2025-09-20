@@ -26,7 +26,6 @@ in
 
     homebrew.casks = [
       "background-music"
-      "ghostty@tip"
       "zen@twilight"
     ];
 
