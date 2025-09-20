@@ -28,7 +28,6 @@ in
       "background-music"
       "ghostty@tip"
       "zen@twilight"
-      "zen"
     ];
 
     wms.aerospace = {

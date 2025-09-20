@@ -78,60 +78,6 @@ in
               "layout floating"
             ];
           }
-          {
-            check-further-callbacks = false;
-            "if" = {
-              app-id = "com.github.th-ch.youtube-music";
-            };
-            run = [
-              "layout floating"
-            ];
-          }
-          {
-            check-further-callbacks = false;
-            "if" = {
-              app-id = "com.apple.Passwords";
-            };
-            run = [
-              "layout floating"
-            ];
-          }
-          {
-            check-further-callbacks = false;
-            "if" = {
-              app-id = "com.utmapp.UTM";
-            };
-            run = [
-              "layout floating"
-            ];
-          }
-          {
-            check-further-callbacks = false;
-            "if" = {
-              app-id = "org.qbittorrent.qBittorrent";
-            };
-            run = [
-              "layout floating"
-            ];
-          }
-          {
-            check-further-callbacks = false;
-            "if" = {
-              app-id = "com.vmware.fusion";
-            };
-            run = [
-              "layout floating"
-            ];
-          }
-          {
-            check-further-callbacks = false;
-            "if" = {
-              app-id = "com.aone.keka";
-            };
-            run = [
-              "layout floating"
-            ];
-          }
           ####### Specific spaces for apps #######
           {
             check-further-callbacks = false;
@@ -165,24 +111,6 @@ in
           {
             check-further-callbacks = false;
             "if" = {
-              app-id = "dev.zed.Zed";
-            };
-            run = [
-              "move-node-to-workspace 2"
-            ];
-          }
-          {
-            check-further-callbacks = false;
-            "if" = {
-              app-id = "net.kovidgoyal.kitty";
-            };
-            run = [
-              "move-node-to-workspace 2"
-            ];
-          }
-          {
-            check-further-callbacks = false;
-            "if" = {
               app-id = "com.mitchellh.ghostty";
             };
             run = [
@@ -196,25 +124,6 @@ in
             };
             run = [
               "move-node-to-workspace 2"
-            ];
-          }
-          {
-            check-further-callbacks = false;
-            "if" = {
-              app-id = "info.sioyek.sioyek";
-            };
-            run = [
-              "move-node-to-workspace 2"
-            ];
-          }
-
-          {
-            check-further-callbacks = false;
-            "if" = {
-              app-id = "us.zoom.xos";
-            };
-            run = [
-              "move-node-to-workspace 3"
             ];
           }
           {
