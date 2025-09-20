@@ -1,9 +1,7 @@
 {
-  options,
   config,
   lib,
   namespace,
-  pkgs,
   ...
 }:
 with lib;
@@ -18,10 +16,9 @@ in
 
   config = mkIf cfg.enable {
     homebrew.casks = [
-      "whatsapp"
-      "zoom"
       "protonvpn"
       "vesktop"
+      "slack"
     ];
   };
 }
