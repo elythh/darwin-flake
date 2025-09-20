@@ -129,10 +129,28 @@ in
           {
             check-further-callbacks = false;
             "if" = {
+              app-id = "com.spotify.client";
+            };
+            run = [
+              "move-node-to-workspace 3"
+            ];
+          }
+          {
+            check-further-callbacks = false;
+            "if" = {
               app-id = "dev.vencord.vesktop";
             };
             run = [
               "move-node-to-workspace 3"
+            ];
+          }
+          {
+            check-further-callbacks = false;
+            "if" = {
+              app-id = "com.tinyspeck.slackmacgap";
+            };
+            run = [
+              "move-node-to-workspace 4"
             ];
           }
         ];
@@ -143,10 +161,10 @@ in
 
           alt-tab = "workspace-back-and-forth";
 
-          alt-h = "focus left";
-          alt-j = "focus down";
-          alt-k = "focus up";
-          alt-l = "focus right";
+          ctrl-h = "focus left";
+          ctrl-j = "focus down";
+          ctrl-k = "focus up";
+          ctrl-l = "focus right";
 
           ctrl-cmd-shift-h = "move left";
           ctrl-cmd-shift-j = "move down";
@@ -198,9 +216,9 @@ in
 
           ctrl-cmd-shift-r = "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --reload && aerospace reload-config";
 
-          alt-t = "exec-and-forget open -a Ghostty.app";
-          alt-e = ''exec-and-forget open -a "Twilight.app"'';
-          alt-f = ''exec-and-forget open -a "Helium.app"'';
+          alt-enter = "exec-and-forget open -a Ghostty.app";
+          # alt-e = ''exec-and-forget open -a "Zen.app"'';
+          # alt-f = ''exec-and-forget open -a "Helium.app"'';
         };
       };
     };
