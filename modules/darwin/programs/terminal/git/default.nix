@@ -40,10 +40,10 @@ in
         core = {
           editor = "nvim";
           excludesfile = "~/.config/git/ignore";
-          pager = "${lib.getExe pkgs.diff-so-fancy}";
+          pager = "${getExe pkgs.diff-so-fancy}";
         };
         pager = {
-          diff = "${lib.getExe pkgs.diff-so-fancy}";
+          diff = "${getExe pkgs.diff-so-fancy}";
           log = "delta";
           reflog = "delta";
           show = "delta";
@@ -140,7 +140,7 @@ in
         customCommands = [
           {
             key = "E";
-            command = "gitmoji commit";
+            command = "${lib.getExe pkgs.gitmoji-cli} commit";
             description = "commit with gitmoji";
             context = "files";
             loadingText = "opening gitmoji commit tool";
