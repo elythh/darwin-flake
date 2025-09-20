@@ -18,20 +18,7 @@ in
 
   config = mkIf cfg.enable {
     home.programs.ghostty.settings = mkIf config.programs.graphical.ghostty.enable {
-      theme = "TokyoNight Moon";
-    };
-
-    home.programs.vscode = mkIf config.programs.graphical.vscode.enable {
-      profiles = {
-        default = {
-          extensions = with pkgs.vscode-extensions; [
-            enkia.tokyo-night
-          ];
-          userSettings = {
-            workbench.colorTheme = "Tokyo Night";
-          };
-        };
-      };
+      theme = "tokyonight_moon";
     };
 
     home.programs.opencode = mkIf config.programs.terminal.opencode.enable {

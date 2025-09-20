@@ -21,10 +21,6 @@ in
   config = mkIf cfg.enable {
     services.sketchybar.enable = true;
 
-    environment.systemPackages = with pkgs; [
-      sbarlua
-    ];
-
     home.file = {
       ".config/sketchybar" = {
         source = ./config/.;
@@ -32,7 +28,7 @@ in
         onChange = "${pkgs.sketchybar}/bin/sketchybar --reload";
       };
       ".local/share/sketchybar_lua/sketchybar.so" = {
-        source = "${pkgs.sbarlua}/lib/lua/5.4/sketchybar.so";
+        source = "${pkgs.${namespace}.sbarlua}/lib/lua/5.4/sketchybar.so";
         onChange = "${pkgs.sketchybar}/bin/sketchybar --reload";
       };
       ".config/sketchybar/sketchybarrc" = {

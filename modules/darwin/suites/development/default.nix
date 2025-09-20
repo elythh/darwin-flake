@@ -26,10 +26,6 @@ in
       opencode.enable = if cfg.aiEnable then true else false;
     };
 
-    programs.graphical = {
-      vscode.enable = true;
-    };
-
     nvim = mkIf cfg.neovimEnable {
       enable = true;
     };
@@ -81,10 +77,16 @@ in
         else
           [ ]
       )
-      ++ (if cfg.aiEnable then [ ] else [ ]);
+      ++ (
+        if cfg.aiEnable then
+          [
+            "msty"
+          ]
+        else
+          [ ]
+      );
 
       masApps = mkIf config.tools.homebrew.masEnable {
-        "Xcode" = 497799835;
       };
 
       brews =

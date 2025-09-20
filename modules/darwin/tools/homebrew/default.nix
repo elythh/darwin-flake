@@ -35,7 +35,7 @@ in
 
       onActivation = {
         autoUpdate = true;
-        cleanup = "uninstall";
+        # cleanup = "uninstall";
         upgrade = true;
       };
     };
