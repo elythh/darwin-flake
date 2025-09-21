@@ -165,15 +165,13 @@ in
         ];
 
         mode.main.binding = {
-          cmd-alt-h = [ ];
-          cmd-h = [ ];
 
           alt-tab = "workspace-back-and-forth";
 
-          ctrl-h = "focus left";
-          ctrl-j = "focus down";
-          ctrl-k = "focus up";
-          ctrl-l = "focus right";
+          cmd-h = "focus left";
+          cmd-j = "focus down";
+          cmd-k = "focus up";
+          cmd-l = "focus right";
 
           ctrl-cmd-shift-h = "move left";
           ctrl-cmd-shift-j = "move down";
@@ -189,27 +187,27 @@ in
           alt-5 = "workspace 5";
           alt-6 = "workspace 6";
 
-          ctrl-cmd-shift-1 = [
+          alt-shift-1 = [
             "move-node-to-workspace 1"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
-          ctrl-cmd-shift-2 = [
+          alt-shift-2 = [
             "move-node-to-workspace 2"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
-          ctrl-cmd-shift-3 = [
+          alt-shift-3 = [
             "move-node-to-workspace 3"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
-          ctrl-cmd-shift-4 = [
+          alt-shift-4 = [
             "move-node-to-workspace 4"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
-          ctrl-cmd-shift-5 = [
+          alt-shift-5 = [
             "move-node-to-workspace 5"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
-          ctrl-cmd-shift-6 = [
+          alt-shift-6 = [
             "move-node-to-workspace 6"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
