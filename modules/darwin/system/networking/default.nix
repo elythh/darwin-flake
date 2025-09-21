@@ -17,6 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    services.tailscale.enable = true;
     networking = {
       knownNetworkServices = [
         # Keep macOS network services consistent
