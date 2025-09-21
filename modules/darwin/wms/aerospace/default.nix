@@ -147,6 +147,15 @@ in
           {
             check-further-callbacks = false;
             "if" = {
+              app-id = "com.spikehd.dorion";
+            };
+            run = [
+              "move-node-to-workspace 3"
+            ];
+          }
+          {
+            check-further-callbacks = false;
+            "if" = {
               app-id = "com.tinyspeck.slackmacgap";
             };
             run = [
