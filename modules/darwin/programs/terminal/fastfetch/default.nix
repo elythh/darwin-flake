@@ -9,7 +9,7 @@
 with lib;
 with lib.${namespace};
 let
-  cfg = config.programs.terminal.starship;
+  cfg = config.programs.terminal.fastfetch;
 in
 {
   options.programs.terminal.fastfetch = with types; {

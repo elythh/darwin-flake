@@ -25,6 +25,7 @@ in
       mise-en-place.enable = true;
       k9s.enable = true;
       direnv.enable = true;
+      fastfetch.enable = true;
       opencode.enable = if cfg.aiEnable then true else false;
     };
 
