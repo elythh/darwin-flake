@@ -183,8 +183,6 @@ in
           alt-2 = "workspace 2";
           alt-3 = "workspace 3";
           alt-4 = "workspace 4";
-          alt-5 = "workspace 5";
-          alt-6 = "workspace 6";
 
           alt-shift-1 = [
             "move-node-to-workspace 1"
@@ -200,14 +198,6 @@ in
           ];
           alt-shift-4 = [
             "move-node-to-workspace 4"
-            "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
-          ];
-          alt-shift-5 = [
-            "move-node-to-workspace 5"
-            "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
-          ];
-          alt-shift-6 = [
-            "move-node-to-workspace 6"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
 

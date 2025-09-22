@@ -10,7 +10,7 @@ local minute = sbar.add("item", {
     padding_right = 0,
   },
   icon = {
-    display = true,
+    display = false,
     padding_left = 12,
     padding_right = 6,
   },
