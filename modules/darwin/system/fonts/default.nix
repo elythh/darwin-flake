@@ -1,10 +1,8 @@
 {
-  options,
   config,
   lib,
   namespace,
   pkgs,
-  inputs,
   ...
 }:
 with lib;
