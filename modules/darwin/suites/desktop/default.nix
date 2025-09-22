@@ -24,6 +24,7 @@ in
     ];
 
     homebrew.casks = [
+      "betterdisplay"
       "background-music"
       "zen"
     ];
