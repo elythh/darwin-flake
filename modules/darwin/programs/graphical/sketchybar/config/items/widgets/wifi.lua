@@ -23,27 +23,8 @@ local wifi = sbar.add("item", "widgets.wifi", {
   padding_right = 4,
 })
 
-local ssid = sbar.add("item", {
-  position = "popup." .. wifi.name,
-  padding_left = 10,
-  padding_right = 10,
-  icon = {
-    align = "left",
-    string = "SSID:",
-    width = popup_width / 2,
-  },
-  label = {
-    string = "???.???.???.???",
-    width = popup_width / 2,
-    align = "right",
-  },
-  background = { drawing = false },
-})
-
 local ip = sbar.add("item", {
   position = "popup." .. wifi.name,
-  padding_left = 10,
-  padding_right = 10,
   icon = {
     align = "left",
     string = "IP:",
@@ -59,8 +40,6 @@ local ip = sbar.add("item", {
 
 local mask = sbar.add("item", {
   position = "popup." .. wifi.name,
-  padding_left = 10,
-  padding_right = 10,
   icon = {
     align = "left",
     string = "Subnet mask:",
@@ -76,8 +55,6 @@ local mask = sbar.add("item", {
 
 local router = sbar.add("item", {
   position = "popup." .. wifi.name,
-  padding_left = 10,
-  padding_right = 10,
   icon = {
     align = "left",
     string = "Router:",
@@ -91,17 +68,19 @@ local router = sbar.add("item", {
   background = { drawing = false },
 })
 
-wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
-  sbar.exec([[ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}']], function(wifi_name)
+wifi:subscribe({ "wifi_change", "system_woke" }, function(_)
+  sbar.exec([[ipconfig getsummary en1 | awk -F ' SSID : '  '/ SSID : / {print $2}']], function(wifi_name)
     local connected = not (wifi_name == "")
     wifi:set {
       icon = {
         string = connected and icons.wifi.connected or icons.wifi.disconnected,
       },
     }
+
     -- VPN icon
     sbar.exec([[sleep 2; scutil --nwi | grep -m1 'utun' | awk '{ print $1 }']], function(vpn)
       local vpnconnected = not (vpn == "")
+
       if vpnconnected then
         Wifi_icon = icons.wifi.vpn
         Wifi_color = colors.green
@@ -125,9 +104,6 @@ local function toggle_details()
   local should_draw = wifi:query().popup.drawing == "off"
   if should_draw then
     wifi:set { popup = { drawing = true } }
-    sbar.exec("ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
-      ssid:set { label = result }
-    end)
     sbar.exec("ipconfig getifaddr en0", function(result)
       ip:set { label = result }
     end)
@@ -143,32 +119,10 @@ local function toggle_details()
 end
 
 wifi:subscribe("mouse.clicked", function()
-  -- sbar.animate("tanh", 8, function()
-  -- 	wifi:set({
-  -- 		background = {
-  -- 			shadow = {
-  -- 				distance = 0,
-  -- 			},
-  -- 		},
-  -- 		y_offset = -4,
-  -- 		padding_left = 8,
-  -- 		padding_right = 0,
-  -- 	})
-  -- 	wifi:set({
-  -- 		background = {
-  -- 			shadow = {
-  -- 				distance = 4,
-  -- 			},
-  -- 		},
-  -- 		y_offset = 0,
-  -- 		padding_left = 4,
-  -- 		padding_right = 4,
-  -- 	})
-  -- end)
   toggle_details()
 end)
 
--- wifi:subscribe("mouse.exited.global", hide_details)
+wifi:subscribe("mouse.exited.global", hide_details)
 
 local function copy_label_to_clipboard(env)
   local label = sbar.query(env.NAME).label.value
@@ -179,7 +133,6 @@ local function copy_label_to_clipboard(env)
   end)
 end
 
-ssid:subscribe("mouse.clicked", copy_label_to_clipboard)
 ip:subscribe("mouse.clicked", copy_label_to_clipboard)
 mask:subscribe("mouse.clicked", copy_label_to_clipboard)
 router:subscribe("mouse.clicked", copy_label_to_clipboard)

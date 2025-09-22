@@ -1,12 +1,14 @@
 return {
-  text = "JetBrainsMono Nerd Font Mono", -- Used for -- Used for text
-  numbers = "JetBrainsMono Nerd Font Mono", -- Used for numbers
-  weather = "JetBrainsMono Nerd Font Mono",
+	text = "SF Pro", -- Used for text
+	numbers = "SF Pro", -- Used for numbers
+	weather = "Symbols Nerd Font",
 
-  -- Unified font style map
-  style_map = {
-    ["Regular"] = "Regular",
-    ["Italic"] = "Italic",
-    ["Bold"] = "Bold",
-  },
+	-- Unified font style map
+	style_map = {
+		["Regular"] = "Regular",
+		["Semibold"] = "Semibold",
+		["Bold"] = "Bold",
+		["Heavy"] = "Heavy",
+		["Black"] = "Black",
+	}
 }

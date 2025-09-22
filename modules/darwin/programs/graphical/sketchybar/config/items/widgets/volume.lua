@@ -1,7 +1,7 @@
 local colors = require("colors").sections.widgets.volume
 local icons = require "icons"
 
-local popup_width = 300
+local popup_width = 250
 
 local volume_icon = sbar.add("item", "widgets.volume", {
   position = "right",
@@ -11,10 +11,10 @@ local volume_icon = sbar.add("item", "widgets.volume", {
   label = { drawing = false },
   background = { drawing = false },
   popup = {
-    align = "center",
-    y_offset = 2,
+    align = "bottom",
   },
-  padding_right = 12,
+  padding_right = 4,
+  padding_left = 4,
 })
 
 local volume_slider = sbar.add("slider", popup_width, {
@@ -93,11 +93,11 @@ local function volume_toggle_details(env)
             label = { string = device, color = color },
             background = { drawing = false },
             click_script = 'SwitchAudioSource -s "'
-                .. device
-                .. '" && sketchybar --set /volume.device\\.*/ label.color='
-                .. colors.popup.item
-                .. " --set $NAME label.color="
-                .. colors.popup.highlight,
+              .. device
+              .. '" && sketchybar --set /volume.device\\.*/ label.color='
+              .. colors.popup.item
+              .. " --set $NAME label.color="
+              .. colors.popup.highlight,
           })
           counter = counter + 1
         end
@@ -115,28 +115,6 @@ end
 
 volume_icon:subscribe("mouse.clicked", function(env)
   volume_toggle_details(env)
-  -- sbar.animate("tanh", 8, function()
-  -- 	volume_icon:set({
-  -- 		background = {
-  -- 			shadow = {
-  -- 				distance = 0,
-  -- 			},
-  -- 		},
-  -- 		y_offset = -4,
-  -- 		padding_left = 8,
-  -- 		padding_right = 0,
-  -- 	})
-  -- 	volume_icon:set({
-  -- 		background = {
-  -- 			shadow = {
-  -- 				distance = 4,
-  -- 			},
-  -- 		},
-  -- 		y_offset = 0,
-  -- 		padding_left = 4,
-  -- 		padding_right = 4,
-  -- 	})
-  -- end)
 end)
 
 volume_icon:subscribe("mouse.scrolled", volume_scroll)
