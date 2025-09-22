@@ -66,7 +66,6 @@ in
       casks = [
         "gitbutler"
         "yaak"
-        "keybase"
       ]
       ++ (
         if cfg.dockerEnable then
