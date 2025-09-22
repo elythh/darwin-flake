@@ -30,6 +30,9 @@ with lib.${namespace};
       xdg.enable = true;
       xdg.configFile = mkAliasDefinitions options.home.configFile;
       programs = mkAliasDefinitions options.home.programs;
+      home.sessionVariables = {
+        STRUKTUR_PATH = "/Users/elyth/Documents/workspace/struktur/k8s";
+      };
     };
 
     home-manager = {
