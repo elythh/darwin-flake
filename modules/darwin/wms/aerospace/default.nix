@@ -167,10 +167,10 @@ in
 
           alt-tab = "workspace-back-and-forth";
 
-          cmd-h = "focus left";
-          cmd-j = "focus down";
-          cmd-k = "focus up";
-          cmd-l = "focus right";
+          cmd-alt-h = "focus left";
+          cmd-alt-j = "focus down";
+          cmd-alt-k = "focus up";
+          cmd-alt-l = "focus right";
 
           ctrl-cmd-shift-h = "move left";
           ctrl-cmd-shift-j = "move down";
