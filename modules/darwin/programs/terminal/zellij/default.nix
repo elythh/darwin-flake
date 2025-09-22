@@ -325,6 +325,8 @@ in
        
       scroll_buffer_size 20000
        
+      session_name "default"
+
       attach_to_session true
        
       show_startup_tips false
