@@ -27,6 +27,8 @@ in
       enableFishIntegration = true;
       settings = {
         add_newline = false;
+        kubernetes.disabled = false;
+        direnv.disabled = false;
         format = lib.concatStrings [
           "$directory"
           "$hostname"
@@ -35,15 +37,9 @@ in
           ######
           "$fill"
           ######
+          "$kubernetes"
           "$battery"
-          "$nix_shell"
-          "$lua"
-          "$python"
-          "$bun"
-          "$nodejs"
-          "$rust"
-          "$swift"
-          "$zig"
+          "$direnv"
           "$cmd_duration"
           "$line_break"
           ######
