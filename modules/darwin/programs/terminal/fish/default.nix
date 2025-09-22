@@ -21,7 +21,6 @@ in
     };
 
     environment.systemPackages = with pkgs; [
-      zoxide
       statix
       fzf
     ];
