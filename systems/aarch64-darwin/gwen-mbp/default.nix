@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [ openvpn ];
 
   suites.common.enable = true;
 
