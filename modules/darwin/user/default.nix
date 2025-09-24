@@ -17,5 +17,7 @@ in
     // cfg.extraOptions;
 
     system.primaryUser = cfg.name;
+
+    programs.fish.enable = true;
   };
 }
