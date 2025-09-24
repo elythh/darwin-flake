@@ -36,6 +36,7 @@ in
           lf.enable = true;
           starship.enable = true;
           zellij.enable = true;
+          k9s.enable = true;
         };
       };
     };
@@ -45,7 +46,7 @@ in
     };
 
     system.security.sops = {
-      enable = false;
+      enable = true;
       defaultSopsFile = lib.snowfall.fs.get-file "secrets/core/secrets.yaml";
     };
   };

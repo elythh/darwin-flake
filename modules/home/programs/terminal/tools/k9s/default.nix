@@ -21,12 +21,16 @@ in
     };
     home.packages = with pkgs; [
       sops
+
+      kubectx
+      kubectl
+      kubecolor
     ];
 
-    # sops.secrets.kubernetes = {
-    #   path = "${config.home.homeDirectory}/.kube/config";
-    #   mode = "0700";
-    # };
+    sops.secrets.kubernetes = {
+      path = "${config.home.homeDirectory}/.kube/config";
+      mode = "0700";
+    };
 
     home.file.".config/k9s/plugins/debug.yml".text = ''
       plugins:

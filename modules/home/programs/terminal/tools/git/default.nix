@@ -102,9 +102,9 @@ in
       };
     };
 
-    # sops.secrets.GITPRIVATETOKEN = {
-    #   path = "${config.home.homeDirectory}/.gitcreds";
-    # };
+    sops.secrets.GITPRIVATETOKEN = {
+      path = "${config.home.homeDirectory}/.gitcreds";
+    };
 
     programs.lazygit = {
       enable = true;
