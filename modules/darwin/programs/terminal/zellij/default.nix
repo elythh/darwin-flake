@@ -330,6 +330,8 @@ in
       attach_to_session true
        
       show_startup_tips false
+      
+      scrollback_editor "/run/current-system/sw/bin/nvim"
     '';
 
     home.file.".config/zellij/layouts/default.kdl".text = ''
