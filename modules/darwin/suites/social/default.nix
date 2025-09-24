@@ -16,6 +16,7 @@ in
 
   config = mkIf cfg.enable {
     homebrew.casks = [
+      "ghostty"
       "discord"
       "protonvpn"
       "vesktop"

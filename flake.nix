@@ -45,7 +45,6 @@
 
       systems.modules.darwin = with inputs; [
         neovim.nixosModules.default
-        sops-nix.darwinModules.sops
       ];
     };
 }
