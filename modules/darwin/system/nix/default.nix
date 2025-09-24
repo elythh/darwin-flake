@@ -17,9 +17,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.terminal.nh = {
-      enable = true;
-    };
 
     documentation = {
       doc.enable = false;
