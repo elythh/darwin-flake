@@ -1,6 +1,10 @@
 > [!WARNING]
 > forked from https://github.com/Lalit64/snowflake
 
+## Doc
+
+This flake is using snowfall lib. Find for informations [here](https://snowfall.org/guides/lib/quickstart/)
+
 ## Usage
 
 ### Nix-darwin
