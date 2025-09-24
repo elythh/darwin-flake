@@ -78,7 +78,7 @@ in
         AppleShowScrollBars = "Automatic";
         NSAutomaticWindowAnimationsEnabled = false;
         # _HIHideMenuBar = hmCfg.programs.sketchybar.enable;
-        _HIHideMenuBar = true;
+        _HIHideMenuBar = false;
       };
 
       CustomUserPreferences = {
