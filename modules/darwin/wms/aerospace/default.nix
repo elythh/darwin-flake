@@ -29,24 +29,24 @@ in
         enable-normalization-flatten-containers = true;
         enable-normalization-opposite-orientation-for-nested-containers = true;
 
-        accordion-padding = 14;
+        accordion-padding = 0;
 
         default-root-container-layout = "tiles";
         default-root-container-orientation = "horizontal";
 
-        exec-on-workspace-change = [
-          "/bin/zsh"
-          "-c"
-          "${pkgs.sketchybar}/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
-        ];
-
-        on-focus-changed = [
-          "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger aerospace_focus_change"
-        ];
+        # exec-on-workspace-change = [
+        #   "/bin/zsh"
+        #   "-c"
+        #   "${pkgs.sketchybar}/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
+        # ];
+        #
+        # on-focus-changed = [
+        #   "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger aerospace_focus_change"
+        # ];
 
         gaps = {
           outer = {
-            top = 20;
+            top = 16;
             bottom = 16;
             left = 16;
             right = 16;

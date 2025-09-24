@@ -41,7 +41,7 @@ in
     };
 
     programs.graphical = {
-      sketchybar.enable = true;
+      sketchybar.enable = false;
       ghostty.enable = true;
       karabiner.enable = true;
     };
