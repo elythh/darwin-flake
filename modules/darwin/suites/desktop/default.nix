@@ -21,7 +21,6 @@ in
       raycast
       switchaudio-osx
       hellwal
-      ice-bar
     ];
 
     homebrew.casks = [
