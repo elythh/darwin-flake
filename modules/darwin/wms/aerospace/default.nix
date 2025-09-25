@@ -34,16 +34,6 @@ in
         default-root-container-layout = "tiles";
         default-root-container-orientation = "horizontal";
 
-        # exec-on-workspace-change = [
-        #   "/bin/zsh"
-        #   "-c"
-        #   "${pkgs.sketchybar}/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
-        # ];
-        #
-        # on-focus-changed = [
-        #   "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger aerospace_focus_change"
-        # ];
-
         gaps = {
           outer = {
             top = 16;
@@ -215,6 +205,28 @@ in
           alt-enter = "exec-and-forget open -a Ghostty.app";
           # alt-e = ''exec-and-forget open -a "Zen.app"'';
           # alt-f = ''exec-and-forget open -a "Helium.app"'';
+        };
+
+        workspace-to-monitor-force-assignment = {
+          "1" = [
+            "1"
+            "2"
+          ];
+          "2" = [
+            "1"
+            "2"
+          ];
+          "3" = [
+            "1"
+            "2"
+          ];
+          "4" = [
+            "2"
+          ];
+          "5" = [
+            "1"
+            "2"
+          ];
         };
       };
     };
