@@ -22,6 +22,7 @@ in
       "vesktop"
       "slack"
       "bitwarden"
+      "microsoft-teams"
     ];
   };
 }
