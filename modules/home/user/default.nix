@@ -15,6 +15,9 @@ in
   config = {
     home = {
       username = mkDefault cfg.name;
+      sessionVariables = {
+          STRUKTUR_PATH="~/Documents/workspace/struktur/k8s";
+      };
     };
 
     programs.home-manager = {
