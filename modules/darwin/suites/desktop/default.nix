@@ -27,6 +27,7 @@ in
     homebrew.casks = [
       "background-music"
       "zen"
+      "karabiner-elements"
     ];
 
     wms.aerospace = {
