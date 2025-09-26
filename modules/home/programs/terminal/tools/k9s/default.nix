@@ -18,6 +18,25 @@ in
   config = mkIf cfg.enable {
     programs.k9s = {
       enable = true;
+      settings = {
+        k9s = {
+          ui = {
+            skin = "default";
+          };
+        };
+      };
+      skins = {
+        default = {
+          k9s = {
+            body = {
+              bgColor = "default";
+            };
+            frame = {
+              bgColor = "default";
+            };
+          };
+        };
+      };
     };
     home.packages = with pkgs; [
       sops
@@ -32,7 +51,7 @@ in
       mode = "0700";
     };
 
-    home.file.".config/k9s/plugins/debug.yml".text = ''
+    home.file."Libary/Application Support/k9s/plugins/debug.yml".text = ''
       plugins:
         #--- Create debug container for selected pod in current namespace
         # See https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#ephemeral-container
