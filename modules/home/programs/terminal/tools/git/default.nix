@@ -105,6 +105,9 @@ in
     sops.secrets.GITPRIVATETOKEN = {
       path = "${config.home.homeDirectory}/.gitcreds";
     };
+    sops.secrets.LINODE_TOKEN = {
+      path = "${config.home.homeDirectory}/.config/LINODE_TOKEN";
+    };
 
     programs.lazygit = {
       enable = true;
