@@ -41,6 +41,7 @@ in
     home.packages = with pkgs; [
       sops
 
+      colima
       kubectx
       kubectl
       kubecolor
