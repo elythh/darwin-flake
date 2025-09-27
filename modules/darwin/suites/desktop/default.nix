@@ -21,7 +21,7 @@ in
       raycast
       switchaudio-osx
       hellwal
-      pkgs.${namespace}.helium
+      # pkgs.${namespace}.helium
     ];
 
     homebrew.casks = [
