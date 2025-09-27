@@ -16,7 +16,7 @@ in
     home = {
       username = mkDefault cfg.name;
       sessionVariables = {
-          STRUKTUR_PATH="~/Documents/workspace/struktur/k8s";
+          STRUKTUR_PATH="/Users/elyth/Documents/workspace/struktur/k8s";
       };
     };
 
