@@ -335,7 +335,7 @@ in
                       border_format   "#[fg=#4C435C]{char}"
                       border_position "top"
 
-                      hide_frame_for_single_pane "false"
+                      hide_frame_for_single_pane "true"
 
                       mode_locked      "#[bg=#6e5fb7,fg=#ffffff,bold] ❤ "
                       mode_normal      "#[bg=#aa87fe,fg=#3c01cd,bold] ❤ NORMAL "
