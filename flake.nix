@@ -46,5 +46,10 @@
       systems.modules.darwin = with inputs; [
         neovim.nixosModules.default
       ];
+
+      homes.modules = with inputs; [
+        neovim.homeModules.default
+        sops-nix.homeManagerModules.sops
+      ];
     };
 }

@@ -12,8 +12,6 @@
   ...
 }:
 {
-  imports = [         inputs.sops-nix.homeManagerModules.sops
-];
   suites.common.enable = true;
   suites.development.enable = true;
 

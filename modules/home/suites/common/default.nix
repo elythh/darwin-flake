@@ -37,6 +37,7 @@ in
           starship.enable = true;
           zellij.enable = true;
           k9s.enable = true;
+          neovim.enable = true;
         };
       };
     };

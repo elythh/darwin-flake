@@ -13,16 +13,11 @@ in
 {
   options.suites.development = with types; {
     enable = mkBoolOpt false "enable development suite";
-    neovimEnable = mkBoolOpt true "enable neovim";
     dockerEnable = mkBoolOpt false "enable docker development";
     androidEnable = mkBoolOpt false "enable android development";
   };
 
   config = mkIf cfg.enable {
-    nvim = mkIf cfg.neovimEnable {
-      enable = true;
-    };
-
     environment.systemPackages =
       with pkgs;
       [
