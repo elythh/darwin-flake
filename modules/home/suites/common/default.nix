@@ -30,6 +30,7 @@ in
         shells.fish.enable = true;
 
         tools = {
+          atuin.enable = true;
           direnv.enable = true;
           fastfetch.enable = true;
           git.enable = true;
