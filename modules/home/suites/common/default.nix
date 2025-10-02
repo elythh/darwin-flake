@@ -34,7 +34,6 @@ in
           direnv.enable = true;
           fastfetch.enable = true;
           git.enable = true;
-          lf.enable = true;
           starship.enable = true;
           zellij.enable = true;
           k9s.enable = true;
