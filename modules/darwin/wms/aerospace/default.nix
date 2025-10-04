@@ -36,14 +36,14 @@ in
 
         gaps = {
           outer = {
-            top = 16;
-            bottom = 16;
-            left = 16;
-            right = 16;
+            top = 0;
+            bottom = 0;
+            left = 0;
+            right = 0;
           };
           inner = {
-            horizontal = 16;
-            vertical = 16;
+            horizontal = 0;
+            vertical = 0;
           };
         };
 
