@@ -37,7 +37,7 @@ in
         autohide-time-modifier = 0.45;
 
         # Style options
-        orientation = "left";
+        orientation = "bottom";
         show-recents = false;
 
         persistent-apps = [
