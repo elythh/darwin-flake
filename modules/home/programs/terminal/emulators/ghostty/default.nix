@@ -22,7 +22,7 @@ in
 
     programs.ghostty = {
       enable = true;
-      package = pkgs.emptyDirectory;
+      package = null;
       enableFishIntegration = true;
 
       settings = {
@@ -44,7 +44,7 @@ in
         window-padding-x = 15;
         window-padding-y = 15;
         # Quick Terminal
-        keybind = "global:cmd+grave_accent=toggle_quick_terminal";
+        keybind = "clear";
         quick-terminal-position = "right";
       };
     };
