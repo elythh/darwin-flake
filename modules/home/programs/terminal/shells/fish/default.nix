@@ -125,10 +125,10 @@ in
           inherit (pkgs.fishPlugins.z) src;
           name = "z";
         }
-        {
-          inherit (pkgs.fishPlugins.fish-you-should-use) src;
-          name = "fish-you-should-use";
-        }
+        # {
+        #   inherit (pkgs.fishPlugins.fish-you-should-use) src;
+        #   name = "fish-you-should-use";
+        # }
       ];
       shellInitLast = ''
         export PATH="$STRUKTUR_PATH/bin:$PATH"
@@ -142,6 +142,9 @@ in
            end
          end
         fish_config theme choose "Tomorrow Night"
+
+        set -gx INTELLI_SEARCH_HOTKEY S
+        intelli-shell init fish | source
       '';
     };
   };
