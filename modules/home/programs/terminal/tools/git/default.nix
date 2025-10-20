@@ -18,16 +18,13 @@ in
   config = mkIf cfg.enable {
     programs.git = {
       enable = true;
-      userEmail = "gwen@omg.lol";
-      userName = "elyth";
+      settings = {
+        user = {
+          mail = "gwen@omg.lol";
+          name = "elyth";
+          signingkey = "~/.ssh/id_default.pub";
+        };
 
-      ignores = [
-        "*.log"
-        ".envrc"
-        "shell.nix"
-      ];
-
-      extraConfig = {
         url = {
           "ssh://git@gitlab.dnm.radiofrance.fr:" = {
             insteadOf = "https://gitlab.dnm.radiofrance.fr/";
@@ -36,7 +33,6 @@ in
         # Sign all commits using ssh key
         commit.gpgsign = true;
         gpg.format = "ssh";
-        user.signingkey = "~/.ssh/id_default.pub";
         core = {
           editor = "nvim";
           excludesfile = "~/.config/git/ignore";
@@ -81,25 +77,30 @@ in
             nobranch = "white";
           };
         };
+        aliases = {
+          st = "status ";
+          ci = "commit ";
+          br = "branch ";
+          co = "checkout ";
+          df = "diff ";
+          dc = "diff - -cached ";
+          lg = "log - p ";
+          pr = "pull - -rebase ";
+          p = "push ";
+          ppr = "push - -set-upstream origin ";
+          lol = "log - -graph - -decorate - -pretty=oneline --abbrev-commit";
+          lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all";
+          latest = "for-each-ref --sort=-taggerdate --format='%(refname:short)' --count=1";
+          undo = "git reset --soft HEAD^";
+          brd = "branch -D";
+        };
       };
 
-      aliases = {
-        st = "status ";
-        ci = "commit ";
-        br = "branch ";
-        co = "checkout ";
-        df = "diff ";
-        dc = "diff - -cached ";
-        lg = "log - p ";
-        pr = "pull - -rebase ";
-        p = "push ";
-        ppr = "push - -set-upstream origin ";
-        lol = "log - -graph - -decorate - -pretty=oneline --abbrev-commit";
-        lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all";
-        latest = "for-each-ref --sort=-taggerdate --format='%(refname:short)' --count=1";
-        undo = "git reset --soft HEAD^";
-        brd = "branch -D";
-      };
+      ignores = [
+        "*.log"
+        ".envrc"
+        "shell.nix"
+      ];
     };
 
     sops.secrets.GITPRIVATETOKEN = {
