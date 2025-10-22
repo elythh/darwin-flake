@@ -25,7 +25,7 @@ in
 
     homebrew.casks = [
       "steam"
-      "background-music"
+      # "background-music"
       "zen"
       "karabiner-elements"
     ];
