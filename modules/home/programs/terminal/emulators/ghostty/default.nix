@@ -44,7 +44,7 @@ in
         window-padding-x = 15;
         window-padding-y = 15;
         # Quick Terminal
-        keybind = "clear";
+        # keybind = "clear";
         quick-terminal-position = "right";
       };
     };
