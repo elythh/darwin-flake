@@ -74,7 +74,7 @@ in
               app-id = "app.zen-browser.zen";
             };
             run = [
-              "move-node-to-workspace 1"
+              "move-node-to-workspace zen"
             ];
           }
 
@@ -84,7 +84,7 @@ in
               app-id = "net.imput.helium";
             };
             run = [
-              "move-node-to-workspace 1"
+              "move-node-to-workspace zen"
             ];
           }
 
@@ -94,7 +94,7 @@ in
               app-id = "com.vscodium";
             };
             run = [
-              "move-node-to-workspace 2"
+              "move-node-to-workspace terminal"
             ];
           }
           {
@@ -103,7 +103,7 @@ in
               app-id = "com.mitchellh.ghostty";
             };
             run = [
-              "move-node-to-workspace 2"
+              "move-node-to-workspace terminal"
             ];
           }
           {
@@ -118,10 +118,19 @@ in
           {
             check-further-callbacks = false;
             "if" = {
+              app-id = "com.tinyspeck.slackmacgap";
+            };
+            run = [
+              "move-node-to-workspace slack"
+            ];
+          }
+          {
+            check-further-callbacks = false;
+            "if" = {
               app-id = "com.spotify.client";
             };
             run = [
-              "move-node-to-workspace 3"
+              "move-node-to-workspace music"
             ];
           }
           {
@@ -130,7 +139,16 @@ in
               app-id = "dev.vencord.vesktop";
             };
             run = [
-              "move-node-to-workspace 3"
+              "move-node-to-workspace discord"
+            ];
+          }
+          {
+            check-further-callbacks = false;
+            "if" = {
+              app-id = "com.hnc.Discord";
+            };
+            run = [
+              "move-node-to-workspace discord"
             ];
           }
           {
@@ -139,7 +157,7 @@ in
               app-id = "com.spikehd.dorion";
             };
             run = [
-              "move-node-to-workspace 3"
+              "move-node-to-workspace discord"
             ];
           }
           {
@@ -148,7 +166,7 @@ in
               app-id = "com.tinyspeck.slackmacgap";
             };
             run = [
-              "move-node-to-workspace 4"
+              "move-node-to-workspace slack"
             ];
           }
         ];
@@ -169,26 +187,27 @@ in
 
           ctrl-cmd-shift-0 = "balance-sizes";
 
-          alt-1 = "workspace 1";
-          alt-2 = "workspace 2";
-          alt-3 = "workspace 3";
-          alt-4 = "workspace 4";
+          alt-z = "workspace zen";
+          alt-t = "workspace terminal";
+          alt-d = "workspace discord";
+          alt-m = "workspace music";
           alt-o = "workspace o";
+          alt-s = "workspace slack";
 
-          alt-shift-1 = [
-            "move-node-to-workspace 1"
+          alt-shift-z = [
+            "move-node-to-workspace zen"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
-          alt-shift-2 = [
-            "move-node-to-workspace 2"
+          alt-shift-t = [
+            "move-node-to-workspace terminal"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
-          alt-shift-3 = [
-            "move-node-to-workspace 3"
+          alt-shift-d = [
+            "move-node-to-workspace discord"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
-          alt-shift-4 = [
-            "move-node-to-workspace 4"
+          alt-shift-m = [
+            "move-node-to-workspace music"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
 
