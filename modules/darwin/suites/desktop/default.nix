@@ -28,6 +28,7 @@ in
       # "background-music"
       "zen"
       "karabiner-elements"
+      "leader-key"
     ];
 
     wms.aerospace = {
