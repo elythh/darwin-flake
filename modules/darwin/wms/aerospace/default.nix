@@ -187,14 +187,14 @@ in
 
           ctrl-cmd-shift-0 = "balance-sizes";
 
-          alt-z = "workspace zen";
+          alt-w = "workspace zen";
           alt-t = "workspace terminal";
           alt-d = "workspace discord";
           alt-m = "workspace music";
           alt-o = "workspace o";
           alt-s = "workspace slack";
 
-          alt-shift-z = [
+          alt-shift-w = [
             "move-node-to-workspace zen"
             "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
           ];
