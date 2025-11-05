@@ -45,6 +45,8 @@ in
       kubectx
       kubectl
       kubecolor
+      glab
+      gh
     ];
 
     sops.secrets.kubernetes = {
