@@ -136,11 +136,13 @@ in
         git = {
           parseEmoji = true;
           overrideGpg = true;
-          paging = {
-            externalDiffCommand = "${lib.getExe pkgs.difftastic} --color=always --syntax-highlight=on --display=inline";
-            colorArg = "never";
-            # pager = "${lib.getExe pkgs.ydiff} -p cat -s --wrap --width={{columnWidth}}";
-          };
+          pagers = [
+            {
+              externalDiffCommand = "${lib.getExe pkgs.difftastic} --color=always --syntax-highlight=on --display=inline";
+              colorArg = "never";
+              # pager = "${lib.getExe pkgs.ydiff} -p cat -s --wrap --width={{columnWidth}}";
+            }
+          ];
           commit = {
             signoff = true;
           };
