@@ -47,6 +47,7 @@ in
       kubecolor
       glab
       gh
+      github-copilot-cli
     ];
 
     sops.secrets.kubernetes = {
