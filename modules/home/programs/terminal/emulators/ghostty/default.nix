@@ -18,15 +18,17 @@ in
   config = mkIf cfg.enable {
     programs.terminal.tools.starship.enable = true;
     programs.terminal.tools.zellij.enable = true;
-    programs.terminal.shells.fish.enable = true;
+    # programs.terminal.shells.fish.enable = true;
+    programs.terminal.shells.zsh.enable = true;
 
     programs.ghostty = {
       enable = true;
       package = null;
       enableFishIntegration = true;
+      enableZshIntegration = true;
 
       settings = {
-        shell-integration = "fish";
+        shell-integration = "zsh";
         shell-integration-features = "no-cursor";
         background-opacity = 0.85;
         background-blur = 255;

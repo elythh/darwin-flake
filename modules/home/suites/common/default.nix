@@ -27,7 +27,8 @@ in
           ghostty.enable = true;
         };
         
-        shells.fish.enable = true;
+        shells.fish.enable = false;
+        shells.zsh.enable = true;
 
         tools = {
           atuin.enable = true;
