@@ -82,8 +82,8 @@ in
         export PATH="$HOME/go/bin:$BUN_INSTALL/bin:$PATH"
 
         # SSH_AUTH_SOCK set to GPG to enable using gpgagent as the ssh agent.
-        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-        gpgconf --launch gpg-agent
+        # export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+        # gpgconf --launch gpg-agent
 
         bindkey -e
 
@@ -170,6 +170,11 @@ in
           name = "fzf-tab";
           src = pkgs.zsh-fzf-tab;
           file = "share/fzf-tab/fzf-tab.plugin.zsh";
+        }
+        {
+          name = "z";
+          src = pkgs.zsh-z;
+          file = "share/zsh-z/zsh-z.plugin.zsh";
         }
       ];
     };

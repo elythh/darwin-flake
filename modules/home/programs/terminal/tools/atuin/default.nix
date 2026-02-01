@@ -18,6 +18,7 @@ in
     programs.atuin = {
       enable = true;
       enableFishIntegration = true;
+      enableZshIntegration = true;
       settings = {
         style = "compact";
         show_tabs = false;
