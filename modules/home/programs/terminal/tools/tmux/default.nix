@@ -8,16 +8,6 @@
 with lib;
 with lib.${namespace};
 let
-  tokyo-night = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tokyo-night";
-    version = "unstable-2023-01-06";
-    src = pkgs.fetchFromGitHub {
-      owner = "janoamaral";
-      repo = "tokyo-night-tmux";
-      rev = "master";
-      sha256 = "sha256-3rMYYzzSS2jaAMLjcQoKreE0oo4VWF9dZgDtABCUOtY=";
-    };
-  };
   cfg = config.programs.terminal.tools.tmux;
 in
 {
@@ -38,72 +28,60 @@ in
       shell = "${pkgs.fish}/bin/fish";
 
       # NOTE: Keep prefix off of Ctrl+A so Zsh can use Ctrl+A (beginning-of-line).
+      prefix = "C-space";
       shortcut = "Space";
       terminal = "screen-256color";
 
       plugins = with pkgs.tmuxPlugins; [
-        tokyo-night
+        catppuccin
         yank
+        resurrect
         sensible
         vim-tmux-navigator
+        tmux-sessionx
+        continuum
+        fzf-tmux-url
       ];
 
       extraConfig = ''
-        # set-default colorset-option -ga terminal-overrides ",xterm-256color:Tc"
-        set -as terminal-features ",xterm-256color:RGB"
-        # set-option -sa terminal-overrides ",xterm*:Tc"
-        set -g mouse on
+        set -g base-index 1              # start indexing windows at 1 instead of 0
+        set -g detach-on-destroy off     # don't exit from tmux when closing a session
+        set -g escape-time 0             # zero-out escape time delay
+        set -g history-limit 1000000     # increase history size (from 2,000)
+        set -g renumber-windows on       # renumber all windows when any window is closed
+        set -g set-clipboard on          # use system clipboard
+        setw -g mode-keys vi
 
-        unbind C-b
-        set -g prefix C-Space
-        bind C-Space send-prefix
+        set -g @fzf-url-fzf-options '-p 60%,30% --prompt="   " --border-label=" Open URL "'
+        set -g @fzf-url-history-limit '2000'
 
-        # Vim style pane selection
-        bind h select-pane -L
-        bind j select-pane -D
-        bind k select-pane -U
-        bind l select-pane -R
+        set -g @sessionx-bind-zo-new-window 'ctrl-y'
+        set -g @sessionx-auto-accept 'off'
+        set -g @sessionx-bind 'o'
+        set -g @sessionx-x-path '/Users/elyth/Documents/'
+        set -g @sessionx-window-height '85%'
+        set -g @sessionx-window-width '75%'
+        set -g @sessionx-zoxide-mode 'on'
+        set -g @sessionx-custom-paths-subdirectories 'false'
+        set -g @sessionx-filter-current 'false'
+        
+        set -g @continuum-restore 'on'
 
-        # Start windows and panes at 1, not 0
-        set -g base-index 1
-        set -g pane-base-index 1
-        set-window-option -g pane-base-index 1
-        set-option -g renumber-windows on
+        set -g @resurrect-strategy-nvim 'session'
 
-        # Bind clearing the screen
-        bind L send-keys '^L'
+        set -g @catppuccin_flavor "mocha"
+        set -g @catppuccin_window_status_style "rounded"
 
-        # Use Alt-arrow keys without prefix key to switch panes
-        bind -n M-Left select-pane -L
-        bind -n M-Right select-pane -R
-        bind -n M-Up select-pane -U
-        bind -n M-Down select-pane -D
+        set -g status-right-length 100
+        set -g status-left-length 100
+        set -g status-left ""
+        set -g status-style "bg=default"
+        set -g status-right "#{E:@catppuccin_status_application}"
+        set -agF status-right "#{E:@catppuccin_status_cpu}"
+        set -ag status-right "#{E:@catppuccin_status_session}"
+        set -ag status-right "#{E:@catppuccin_status_uptime}"
+        set -agF status-right "#{E:@catppuccin_status_battery}"
 
-        # Shift arrow to switch windows
-        bind -n S-Left  previous-window
-        bind -n S-Right next-window
-
-        # Shift Alt vim keys to switch windows
-        bind -n M-H previous-window
-        bind -n M-L next-window
-
-        set -g @tokyo-night-tmux_window_id_style hsquare
-        set -g @tokyo-night-tmux_show_datetime 0
-        set -g @tokyo-night-tmux_show_git 0
-
-        run-shell ${tokyo-night}/share/tmux-plugins/tokyo-night/tokyo-night.tmux
-
-        # set vi-mode
-        set-window-option -g mode-keys vi
-
-        # keybindings
-        bind-key -T copy-mode-vi v send-keys -X begin-selection
-        bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
-        bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
-
-        bind '"' split-window -v -c "#{pane_current_path}"
-        bind % split-window -h -c "#{pane_current_path}"
-        bind c new-window -c "#{pane_current_path}"
       '';
     };
   };
