@@ -36,7 +36,8 @@ in
           fastfetch.enable = true;
           git.enable = true;
           starship.enable = true;
-          zellij.enable = true;
+          zellij.enable = false;
+          tmux.enable = true;
           k9s.enable = true;
           neovim.enable = true;
         };

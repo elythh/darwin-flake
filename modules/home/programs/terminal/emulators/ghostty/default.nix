@@ -17,7 +17,8 @@ in
 
   config = mkIf cfg.enable {
     programs.terminal.tools.starship.enable = true;
-    programs.terminal.tools.zellij.enable = true;
+    # programs.terminal.tools.zellij.enable = true;
+    programs.terminal.tools.tmux.enable = true;
     programs.terminal.shells.fish.enable = true;
     # programs.terminal.shells.zsh.enable = true;
 
