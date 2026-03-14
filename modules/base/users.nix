@@ -2,7 +2,7 @@
 {
   flake = {
     meta.users.default = {
-      username = "gwen";
+      username = "elyth";
       name = "Gwenc'hlan";
       authorizedKeys = [
       ];

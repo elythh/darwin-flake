@@ -1,0 +1,27 @@
+{ config, ... }:
+{
+  flake.modules.homeManager.common = {
+    imports = with config.flake.modules.homeManager; [
+      ghostty
+      fish
+      atuin
+      direnv
+      fastfetch
+      git
+      starship
+      tmux
+      k9s
+      karabiner
+      neovim
+    ];
+
+    programs.home-manager.enable = true;
+
+    home = {
+      file.".hushlogin".text = "";
+      sessionVariables = {
+        EDITOR = "nvim";
+      };
+    };
+  };
+}

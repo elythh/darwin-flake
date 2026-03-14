@@ -1,13 +1,28 @@
-
 { config, ... }:
+let
+  username = config.flake.meta.users.default.username;
+in
 {
   flake = {
     darwinConfigurations.voidling = config.flake.lib.mkSystems.darwin "voidling";
 
-    modules.darwin.voidling = {
-      imports = with config.flake.modules.darwin; [
-        laptop
-      ];
-    };
+    modules.darwin.voidling =
+      { pkgs, ... }:
+      {
+        imports = with config.flake.modules.darwin; [
+          laptop
+          common
+          social
+          development
+          desktop
+        ];
+
+        environment.systemPackages = [ pkgs.openvpn ];
+
+        home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
+          common
+          tokyonight-moon
+        ];
+      };
   };
 }
