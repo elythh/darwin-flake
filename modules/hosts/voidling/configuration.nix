@@ -21,7 +21,6 @@ in
 
         home-manager.users.${username}.imports = with config.flake.modules.homeManager; [
           common
-          tokyonight-moon
         ];
       };
   };
