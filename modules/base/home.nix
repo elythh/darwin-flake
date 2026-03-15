@@ -24,17 +24,16 @@
       };
     };
 
-    homeManager.homeManager =
-      {
-	imports = [ inputs.neovim.homeModules.default ];
-        home =
-          let
-            inherit (config.flake.meta.users.default) username;
-          in
-          {
-            inherit username;
-            stateVersion = "26.05";
-          };
-      };
+    homeManager.homeManager = {
+      imports = [ inputs.neovim.homeModules.default ];
+      home =
+        let
+          inherit (config.flake.meta.users.default) username;
+        in
+        {
+          inherit username;
+          stateVersion = "26.05";
+        };
+    };
   };
 }

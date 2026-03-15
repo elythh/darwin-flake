@@ -22,23 +22,79 @@
           default-root-container-orientation = "horizontal";
 
           gaps = {
-            outer = { top = 0; bottom = 0; left = 0; right = 0; };
-            inner = { horizontal = 0; vertical = 0; };
+            outer = {
+              top = 0;
+              bottom = 0;
+              left = 0;
+              right = 0;
+            };
+            inner = {
+              horizontal = 0;
+              vertical = 0;
+            };
           };
 
           on-window-detected = [
-            { check-further-callbacks = false; "if".app-id = "com.apple.finder"; run = [ "layout floating" ]; }
-            { check-further-callbacks = false; "if".app-id = "dev.kdrag0n.MacVirt"; run = [ "layout floating" ]; }
-            { check-further-callbacks = false; "if".app-id = "app.zen-browser.zen"; run = [ "move-node-to-workspace zen" ]; }
-            { check-further-callbacks = false; "if".app-id = "net.imput.helium"; run = [ "move-node-to-workspace zen" ]; }
-            { check-further-callbacks = false; "if".app-id = "com.vscodium"; run = [ "move-node-to-workspace terminal" ]; }
-            { check-further-callbacks = false; "if".app-id = "com.mitchellh.ghostty"; run = [ "move-node-to-workspace terminal" ]; }
-            { check-further-callbacks = false; "if".app-id = "md.obsidian"; run = [ "move-node-to-workspace o" ]; }
-            { check-further-callbacks = false; "if".app-id = "com.tinyspeck.slackmacgap"; run = [ "move-node-to-workspace slack" ]; }
-            { check-further-callbacks = false; "if".app-id = "com.spotify.client"; run = [ "move-node-to-workspace music" ]; }
-            { check-further-callbacks = false; "if".app-id = "dev.vencord.vesktop"; run = [ "move-node-to-workspace discord" ]; }
-            { check-further-callbacks = false; "if".app-id = "com.hnc.Discord"; run = [ "move-node-to-workspace discord" ]; }
-            { check-further-callbacks = false; "if".app-id = "com.spikehd.dorion"; run = [ "move-node-to-workspace discord" ]; }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "com.apple.finder";
+              run = [ "layout floating" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "dev.kdrag0n.MacVirt";
+              run = [ "layout floating" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "app.zen-browser.zen";
+              run = [ "move-node-to-workspace zen" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "net.imput.helium";
+              run = [ "move-node-to-workspace zen" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "com.vscodium";
+              run = [ "move-node-to-workspace terminal" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "com.mitchellh.ghostty";
+              run = [ "move-node-to-workspace terminal" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "md.obsidian";
+              run = [ "move-node-to-workspace o" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "com.tinyspeck.slackmacgap";
+              run = [ "move-node-to-workspace slack" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "com.spotify.client";
+              run = [ "move-node-to-workspace music" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "dev.vencord.vesktop";
+              run = [ "move-node-to-workspace discord" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "com.hnc.Discord";
+              run = [ "move-node-to-workspace discord" ];
+            }
+            {
+              check-further-callbacks = false;
+              "if".app-id = "com.spikehd.dorion";
+              run = [ "move-node-to-workspace discord" ];
+            }
           ];
 
           mode.main.binding = {
@@ -63,10 +119,22 @@
             alt-o = "workspace o";
             alt-s = "workspace slack";
 
-            alt-shift-w = [ "move-node-to-workspace zen" "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change" ];
-            alt-shift-t = [ "move-node-to-workspace terminal" "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change" ];
-            alt-shift-d = [ "move-node-to-workspace discord" "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change" ];
-            alt-shift-m = [ "move-node-to-workspace music" "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change" ];
+            alt-shift-w = [
+              "move-node-to-workspace zen"
+              "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
+            ];
+            alt-shift-t = [
+              "move-node-to-workspace terminal"
+              "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
+            ];
+            alt-shift-d = [
+              "move-node-to-workspace discord"
+              "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
+            ];
+            alt-shift-m = [
+              "move-node-to-workspace music"
+              "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --trigger space_windows_change"
+            ];
 
             ctrl-cmd-shift-space = "layout floating tiling";
             ctrl-cmd-shift-minus = "resize smart -50";
@@ -83,11 +151,23 @@
           };
 
           workspace-to-monitor-force-assignment = {
-            "1" = [ "1" "2" ];
-            "2" = [ "1" "2" ];
-            "3" = [ "1" "2" ];
+            "1" = [
+              "1"
+              "2"
+            ];
+            "2" = [
+              "1"
+              "2"
+            ];
+            "3" = [
+              "1"
+              "2"
+            ];
             "4" = [ "2" ];
-            "5" = [ "1" "2" ];
+            "5" = [
+              "1"
+              "2"
+            ];
           };
         };
       };

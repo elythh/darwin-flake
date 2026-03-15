@@ -43,6 +43,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     description = "Private, fast, and honest web browser based on Chromium";
     homepage = "https://helium.computer/";
     license = lib.licenses.gpl3;
-    platforms = [ "aarch64-darwin" "x86_64-darwin" ];
+    platforms = [
+      "aarch64-darwin"
+      "x86_64-darwin"
+    ];
   };
 })
