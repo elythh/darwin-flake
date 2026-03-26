@@ -6,6 +6,7 @@
         packages = with pkgs; [
           git
           just
+          nh
         ];
 
         buildInputs = [ ];

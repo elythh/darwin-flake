@@ -13,6 +13,7 @@
       k9s
       karabiner
       neovim
+      nh
     ];
 
     programs.home-manager.enable = true;

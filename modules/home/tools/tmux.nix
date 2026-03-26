@@ -14,6 +14,7 @@
         secureSocket = true;
         shell = "${pkgs.fish}/bin/fish";
 
+        # NOTE: Keep prefix off of Ctrl+A so Zsh can use Ctrl+A (beginning-of-line).
         prefix = "C-space";
         shortcut = "Space";
         terminal = "screen-256color";
@@ -30,15 +31,16 @@
         ];
 
         extraConfig = ''
-          set -g base-index 1
-          set -g detach-on-destroy off
-          set -g escape-time 0
-          set -g history-limit 1000000
-          set -g renumber-windows on
-          set -g set-clipboard on
+          set -g mouse on
+          set -g base-index 1              # start indexing windows at 1 instead of 0
+          set -g detach-on-destroy off     # don't exit from tmux when closing a session
+          set -g escape-time 0             # zero-out escape time delay
+          set -g history-limit 1000000     # increase history size (from 2,000)
+          set -g renumber-windows on       # renumber all windows when any window is closed
+          set -g set-clipboard on          # use system clipboard
           setw -g mode-keys vi
 
-          set -g @fzf-url-fzf-options '-p 60%,30% --prompt="   " --border-label=" Open URL "'
+          set -g @fzf-url-fzf-options '-p 60%,30% --prompt="   " --border-label=" Open URL "'
           set -g @fzf-url-history-limit '2000'
 
           set -g @sessionx-bind-zo-new-window 'ctrl-y'
@@ -52,6 +54,7 @@
           set -g @sessionx-filter-current 'false'
 
           set -g @continuum-restore 'on'
+
           set -g @resurrect-strategy-nvim 'session'
 
           set -g @catppuccin_flavor "mocha"
@@ -61,11 +64,21 @@
           set -g status-left-length 100
           set -g status-left ""
           set -g status-style "bg=default"
-          set -g status-right "#{E:@catppuccin_status_application}"
-          set -agF status-right "#{E:@catppuccin_status_cpu}"
-          set -ag status-right "#{E:@catppuccin_status_session}"
-          set -ag status-right "#{E:@catppuccin_status_uptime}"
-          set -agF status-right "#{E:@catppuccin_status_battery}"
+          # set -g status-right "#{E:@catppuccin_status_application}"
+          # set -agF status-right "#{E:@catppuccin_status_cpu}"
+          # set -ag status-right "#{E:@catppuccin_status_session}"
+          # set -ag status-right "#{E:@catppuccin_status_uptime}"
+          # set -agF status-right "#{E:@catppuccin_status_battery}"
+
+          set -gF window-status-format "#[bg=#{@ctp_surface_1},fg=#{@ctp_fg}] ##I ##W "
+          set -gF window-status-current-format "#[bg=#{@ctp_mauve},fg=#{@ctp_crust}] ##I ##W "
+
+          set -g @vim_navigator_mapping_left "C-Left C-h"
+          set -g @vim_navigator_mapping_right "C-Right C-l"
+          set -g @vim_navigator_mapping_up "C-k"
+          set -g @vim_navigator_mapping_down "C-j"
+          set -g @vim_navigator_mapping_prev ""
+
         '';
       };
     };

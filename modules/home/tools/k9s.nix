@@ -1,7 +1,7 @@
 { ... }:
 {
   flake.modules.homeManager.k9s =
-    { pkgs, config, ... }:
+    { pkgs, ... }:
     {
       programs.k9s = {
         enable = true;
@@ -22,6 +22,8 @@
         colima
         kubectx
         kubectl
+        kubie
+        istioctl
         kubecolor
         glab
         gh
