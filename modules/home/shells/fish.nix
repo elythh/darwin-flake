@@ -114,9 +114,6 @@
              enable_transience
           end
           fish_config theme choose "Tomorrow Night"
-
-          set -gx INTELLI_SEARCH_HOTKEY S
-          intelli-shell init fish | source
         '';
       };
     };

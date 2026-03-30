@@ -3,6 +3,7 @@
   flake.modules.homeManager.common = {
     imports = with config.flake.modules.homeManager; [
       ghostty
+      kitty
       fish
       atuin
       direnv

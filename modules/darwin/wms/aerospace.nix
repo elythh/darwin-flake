@@ -62,6 +62,11 @@
             }
             {
               check-further-callbacks = false;
+              "if".app-id = "net.kovidgoyal.kitty";
+              run = [ "move-node-to-workspace terminal" ];
+            }
+            {
+              check-further-callbacks = false;
               "if".app-id = "com.mitchellh.ghostty";
               run = [ "move-node-to-workspace terminal" ];
             }
@@ -147,7 +152,7 @@
 
             ctrl-cmd-shift-r = "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --reload && aerospace reload-config";
 
-            alt-enter = "exec-and-forget open -a Ghostty.app";
+            alt-enter = "exec-and-forget open -a kitty";
           };
 
           workspace-to-monitor-force-assignment = {
