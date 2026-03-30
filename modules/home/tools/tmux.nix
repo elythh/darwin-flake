@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   flake.modules.homeManager.tmux =
     { pkgs, ... }:
     {
@@ -64,11 +63,13 @@
           set -g status-left-length 100
           set -g status-left ""
           set -g status-style "bg=default"
-          # set -g status-right "#{E:@catppuccin_status_application}"
-          # set -agF status-right "#{E:@catppuccin_status_cpu}"
-          # set -ag status-right "#{E:@catppuccin_status_session}"
-          # set -ag status-right "#{E:@catppuccin_status_uptime}"
-          # set -agF status-right "#{E:@catppuccin_status_battery}"
+          set -g @ctp_bg "#24273a"
+          set -g @ctp_surface_1 "#494d64"
+          set -g @ctp_fg "#cad3f5"
+          set -g @ctp_mauve "#c6a0f6"
+          set -g @ctp_crust "#181926"
+
+          set -gF status-style "fg=#{@ctp_fg}"
 
           set -gF window-status-format "#[bg=#{@ctp_surface_1},fg=#{@ctp_fg}] ##I ##W "
           set -gF window-status-current-format "#[bg=#{@ctp_mauve},fg=#{@ctp_crust}] ##I ##W "
