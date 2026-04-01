@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   flake.modules.homeManager.fish =
     { pkgs, ... }:
     {
@@ -83,10 +82,10 @@
           };
         };
         plugins = [
-          {
-            inherit (pkgs.fishPlugins.autopair) src;
-            name = "autopair";
-          }
+          # {
+          #   inherit (pkgs.fishPlugins.autopair) src;
+          #   name = "autopair";
+          # }
           {
             inherit (pkgs.fishPlugins.plugin-git) src;
             name = "plugin-git";
@@ -114,6 +113,12 @@
              enable_transience
           end
           fish_config theme choose "Tomorrow Night"
+          export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
+          set -U fifc_exa_opts --icons --tree
+
+          # Default binding doesn't work. Why ? Idk, that forces it to tab
+          bind \t _fifc
+          bind $fifc_keybinding _fifc
         '';
       };
     };
