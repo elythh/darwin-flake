@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   flake.modules.darwin.development =
     { pkgs, ... }:
     {
@@ -12,7 +11,7 @@
         nixd
         pnpm
         prettierd
-        nixfmt-rfc-style
+        nixfmt
         typescript
         zulu
       ];

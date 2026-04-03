@@ -16,7 +16,7 @@
         automake
         jq
         nixd
-        nixfmt-rfc-style
+        nixfmt
         wget
       ];
 
