@@ -55,8 +55,8 @@ _: {
           w = "wanda";
 
           k9s = "k9s --readonly";
-          kns = "kubens";
-          kcx = "kubectx";
+          kns = "${kubie}/bin/kubie ns";
+          kcx = "${kubie}/bin/kubie ctx";
           kubectl = "kubecolor";
           k = "kubectl";
           kg = "kubectl get";
