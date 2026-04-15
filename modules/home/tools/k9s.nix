@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   flake.modules.homeManager.k9s =
     { pkgs, ... }:
     {
@@ -20,6 +19,7 @@
 
       home.packages = with pkgs; [
         colima
+        devenv
         kubectx
         kubectl
         kubie
