@@ -20,9 +20,9 @@
     programs.home-manager.enable = true;
 
     home = {
-      file.".hushlogin".text = "";
       sessionVariables = {
         EDITOR = "nvim";
+        GITLAB_URL = "https://gitlab.dnm.radiofrance.fr/";
       };
     };
   };
