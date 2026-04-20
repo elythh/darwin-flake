@@ -1,7 +1,7 @@
 {
   flake.modules.homeManager.neovim =
-    { inputs, ... }:
+    { inputs, pkgs, ... }:
     {
-      nvim.enable = true;
+      home.packages = [ inputs.neovim.packages.${pkgs.stdenv.hostPlatform.system}.default ];
     };
 }

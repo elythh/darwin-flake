@@ -10,6 +10,7 @@
         backupFileExtension = "backup";
         useGlobalPkgs = true;
         useUserPackages = true;
+        extraSpecialArgs = { inherit inputs; };
       };
     };
     darwin.darwin = {
@@ -21,11 +22,11 @@
         backupFileExtension = "backup";
         useGlobalPkgs = true;
         useUserPackages = true;
+        extraSpecialArgs = { inherit inputs; };
       };
     };
 
     homeManager.homeManager = {
-      imports = [ inputs.neovim.homeModules.default ];
       home =
         let
           inherit (config.flake.meta.users.default) username;

@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  username = config.flake.meta.users.default.username;
+  inherit (config.flake.meta.users.default) username;
 in
 {
   flake = {
