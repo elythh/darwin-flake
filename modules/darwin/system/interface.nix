@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  username = config.flake.meta.users.default.username;
+  inherit (config.flake.meta.users.default) username;
 in
 {
   flake.modules.darwin.interface = {
@@ -23,10 +23,6 @@ in
         autohide-time-modifier = 0.45;
         orientation = "bottom";
         show-recents = false;
-        persistent-apps = [
-          "/Applications/Ghostty.app/"
-          "/System/Applications/Music.app/"
-        ];
       };
 
       finder = {
