@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   flake.modules.darwin.aerospace =
     { pkgs, ... }:
     {
@@ -152,7 +151,7 @@
 
             ctrl-cmd-shift-r = "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar --reload && aerospace reload-config";
 
-            alt-enter = "exec-and-forget open -a kitty";
+            alt-enter = "exec-and-forget open -a ghostty";
           };
 
           workspace-to-monitor-force-assignment = {

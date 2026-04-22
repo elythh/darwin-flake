@@ -40,6 +40,11 @@
     neovim.url = "github:elythh/nvim/nixcats";
     neovim.inputs.nixpkgs.follows = "nixpkgs";
 
+    ghostty-cursor-shaders = {
+      url = "github:sahaj-b/ghostty-cursor-shaders";
+      flake = false;
+    };
+
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
