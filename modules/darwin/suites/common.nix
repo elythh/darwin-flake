@@ -13,6 +13,7 @@
       ];
 
       environment.systemPackages = with pkgs; [
+        unar
         automake
         jq
         nixd
