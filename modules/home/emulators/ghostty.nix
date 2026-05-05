@@ -13,7 +13,7 @@
         -vec4 TRAIL_COLOR = iCurrentCursorColor; // can change to eg: vec4(0.2, 0.6, 1.0, 0.5);
         -const float DURATION = 0.2; // total animation time
         -const float TRAIL_SIZE = 0.8; // 0.0 = all corners move together. 1.0 = max smear (leading corners jump instantly)
-        +vec4 TRAIL_COLOR = vec4(1.0, 0.1, 0.85, 0.95); // loud neon magenta
+        +vec4 TRAIL_COLOR = iCurrentCursorColor; // follow cursor color; avoids forced neon tint
         +const float DURATION = 0.45; // total animation time
         +const float TRAIL_SIZE = 1.0; // 0.0 = all corners move together. 1.0 = max smear (leading corners jump instantly)
          const float THRESHOLD_MIN_DISTANCE = 1.5; // min distance to show trail (units of cursor height)
@@ -39,19 +39,20 @@
         -const float DURATION = 0.15;               // How long the ripple animates (seconds)
         -const float MAX_RADIUS = 0.05;             // Max radius in normalized coords (0.5 = 1/4 screen height)
         -const float RING_THICKNESS = 0.02;             // Ring width in normalized coords
-        +const float DURATION = 0.45;               // How long the ripple animates (seconds)
-        +const float MAX_RADIUS = 0.09;             // Max radius in normalized coords (0.5 = 1/4 screen height)
-        +const float RING_THICKNESS = 0.045;             // Ring width in normalized coords
+        +const float DURATION = 0.2;                // How long the ripple animates (seconds)
+        +const float MAX_RADIUS = 0.04;             // Keep ripple compact
+        +const float RING_THICKNESS = 0.018;        // Keep ring visually tight
          const float CURSOR_WIDTH_CHANGE_THRESHOLD = 0.5; // Triggers ripple if cursor width changes by this fraction
         -vec4 COLOR = vec4(0.35, 0.36, 0.44, 1.0); // change to iCurrentCursorColor for your cursor's color
         -const float BLUR = 3.0;                    // Blur level in pixels
         -const float ANIMATION_START_OFFSET = 0.0;        // Start the ripple slightly progressed (0.0 - 1.0)
-        +vec4 COLOR = vec4(0.1, 0.9, 1.0, 0.95); // bright cyan ripple
-        +const float BLUR = 6.0;                    // Blur level in pixels
-        +const float ANIMATION_START_OFFSET = 0.08;        // Start the ripple slightly progressed (0.0 - 1.0)
+        +vec4 COLOR = iCurrentCursorColor;          // follow cursor color; avoids fixed tint
+        +const float BLUR = 2.5;                    // Crisper/smaller visual footprint
+        +const float ANIMATION_START_OFFSET = 0.0;  // Start from true origin
       '';
 
       patchedGhosttyShaders = pkgs.applyPatches {
+
         name = "ghostty-cursor-shaders-patched";
         src = inputs.ghostty-cursor-shaders;
         patches = [
