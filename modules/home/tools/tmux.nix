@@ -80,6 +80,9 @@ _: {
           set -g @vim_navigator_mapping_down "C-j"
           set -g @vim_navigator_mapping_prev ""
 
+          bind  c  new-window      -c "#{pane_current_path}"
+          bind  %  split-window -h -c "#{pane_current_path}"
+          bind '"' split-window -v -c "#{pane_current_path}"
         '';
       };
     };
