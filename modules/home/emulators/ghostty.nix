@@ -5,12 +5,12 @@
     let
       cursorWarpPatch = builtins.toFile "ghostty-cursor-warp.patch" ''
         diff --git a/cursor_warp.glsl b/cursor_warp.glsl
-        index 02ea35f..7d06468 100644
+        index 12c497f..7d06468 100644
         --- a/cursor_warp.glsl
         +++ b/cursor_warp.glsl
-        @@ -1,13 +1,13 @@
+        @@ -6,14 +6,14 @@ vec3 sRGBToLinear(vec3 c) {
          // --- CONFIGURATION ---
-        -vec4 TRAIL_COLOR = iCurrentCursorColor; // can change to eg: vec4(0.2, 0.6, 1.0, 0.5);
+        -vec4 TRAIL_COLOR = vec4(sRGBToLinear(iCurrentCursorColor.rgb), iCurrentCursorColor.a); // for custom color: vec4(0.2, 0.6, 1.0, 0.5); (wrap in sRGBToLinear for correct brightness)
         -const float DURATION = 0.2; // total animation time
         -const float TRAIL_SIZE = 0.8; // 0.0 = all corners move together. 1.0 = max smear (leading corners jump instantly)
         +vec4 TRAIL_COLOR = iCurrentCursorColor; // follow cursor color; avoids forced neon tint
@@ -31,7 +31,7 @@
       '';
       rippleCursorPatch = builtins.toFile "ghostty-ripple-cursor.patch" ''
         diff --git a/ripple_cursor.glsl b/ripple_cursor.glsl
-        index 8be2f91..f903b4a 100644
+        index 8be2f91..84a05a7 100644
         --- a/ripple_cursor.glsl
         +++ b/ripple_cursor.glsl
         @@ -1,10 +1,10 @@
