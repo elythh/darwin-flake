@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   flake.modules.homeManager.git =
     { pkgs, lib, ... }:
     {
@@ -13,7 +12,7 @@
           };
 
           url = {
-            "ssh://git@gitlab.dnm.radiofrance.fr:" = {
+            "ssh://git@gitlab.dnm.radiofrance.fr/" = {
               insteadOf = "https://gitlab.dnm.radiofrance.fr/";
             };
           };
