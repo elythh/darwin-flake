@@ -28,6 +28,7 @@ _: {
         glab
         gh
         github-copilot-cli
+        opencode
       ];
 
       home.file."Library/Application Support/k9s/plugins/debug.yml".text = ''
