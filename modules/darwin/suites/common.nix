@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, inputs, ... }:
 {
   flake.modules.darwin.common =
     { pkgs, ... }:
@@ -19,6 +19,7 @@
         nixd
         nixfmt
         wget
+        inputs.lfk.packages.${pkgs.system}.default
       ];
 
       programs.fish.enable = true;

@@ -75,7 +75,7 @@
           background-opacity = 0.85;
           background-blur = 255;
           font-size = 13;
-          font-family = "JetBrainsMono Nerd Font Mono";
+          font-family = "IosevkaTerm Nerd Font Mono";
           font-thicken = true;
           cursor-style = "block";
           custom-shader = [
