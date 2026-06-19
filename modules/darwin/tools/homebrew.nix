@@ -6,9 +6,6 @@ _: {
 
       homebrew = {
         enable = true;
-        onActivation.extraFlags = [
-          "--force-cleanup"
-        ];
         caskArgs.no_quarantine = true;
         global = {
           brewfile = true;

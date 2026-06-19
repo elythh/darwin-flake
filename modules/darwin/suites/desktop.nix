@@ -18,6 +18,7 @@
         "zen"
         "karabiner-elements"
         "leader-key"
+        "macshot"
       ];
     };
 }
