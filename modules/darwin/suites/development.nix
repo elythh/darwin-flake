@@ -14,6 +14,11 @@ _: {
         nixfmt
         typescript
         zulu
+
+        jujutsu
+        lazyjj
+
+        lmstudio
       ];
 
       homebrew.casks = [

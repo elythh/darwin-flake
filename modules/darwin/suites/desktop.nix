@@ -15,10 +15,8 @@
 
       homebrew.casks = [
         "steam"
-        "zen"
         "karabiner-elements"
         "leader-key"
-        # "macshot"
       ];
     };
 }

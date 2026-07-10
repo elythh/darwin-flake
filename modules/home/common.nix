@@ -15,6 +15,7 @@
       karabiner
       neovim
       nh
+      zen-browser
     ];
 
     programs.home-manager.enable = true;
