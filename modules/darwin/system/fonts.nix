@@ -6,7 +6,7 @@ _: {
         nerd-fonts.jetbrains-mono
         nerd-fonts.caskaydia-cove
         nerd-fonts.iosevka-term
-        sketchybar-app-font
+        # sketchybar-app-font
       ];
 
       system.defaults.NSGlobalDomain.AppleFontSmoothing = 1;

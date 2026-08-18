@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, ... }:
 {
   flake.modules.darwin.common =
     { pkgs, ... }:
@@ -13,13 +13,13 @@
       ];
 
       environment.systemPackages = with pkgs; [
-        unar
+        # unar
         automake
         jq
         nixd
         nixfmt
         wget
-        inputs.lfk.packages.${pkgs.system}.default
+        # inputs.lfk.packages.${pkgs.system}.default
       ];
 
       programs.fish.enable = true;
