@@ -1,9 +1,13 @@
-{ inputs, ... }:
+{
+  inputs,
+  ...
+}:
 {
   flake.modules.homeManager.zen-browser =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     let
       firefox-addons = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
+      sineBootloader = ./. + "/sine/bootloader";
     in
     {
       imports = [ inputs.zen-browser.homeModules.default ];
@@ -68,5 +72,14 @@
           };
         };
       };
+
+      home.activation.zen-sine-bootloader = lib.hm.dag.entryAfter [ "copyApps" ] ''
+        for resources in "$HOME/Applications/Home Manager Apps"/*.app/Contents/Resources; do
+          if [[ -d "$resources" && -f "$resources/application.ini" ]]; then
+            install -D -m 0644 ${sineBootloader}/config.js "$resources/config.js"
+            install -D -m 0644 ${sineBootloader}/defaults/pref/config-prefs.js "$resources/defaults/pref/config-prefs.js"
+          fi
+        done
+      '';
     };
 }
