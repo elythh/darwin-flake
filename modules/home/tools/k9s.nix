@@ -29,6 +29,7 @@ _: {
         gh
         github-copilot-cli
         opencode
+        claude-code
       ];
 
       home.file."Library/Application Support/k9s/plugins/debug.yml".text = ''
