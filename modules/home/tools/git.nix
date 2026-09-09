@@ -107,10 +107,10 @@ _: {
           git = {
             parseEmoji = true;
             overrideGpg = true;
-            pagers = [
+            diffRenderers = [
               {
-                externalDiffCommand = "${lib.getExe pkgs.difftastic} --color=always --syntax-highlight=on --display=inline";
-                colorArg = "never";
+                type = "extDiff";
+                command = "${lib.getExe pkgs.difftastic} --color=always --syntax-highlight=on --display=inline";
               }
             ];
             commit.signoff = true;
