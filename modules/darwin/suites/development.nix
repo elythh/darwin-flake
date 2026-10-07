@@ -12,6 +12,7 @@ _: {
         pnpm
         prettierd
         nixfmt
+        tuios
         typescript
         zulu
 
