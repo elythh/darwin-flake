@@ -54,7 +54,7 @@
       patchedGhosttyShaders = pkgs.applyPatches {
 
         name = "ghostty-cursor-shaders-patched";
-        src = inputs.ghostty-cursor-shaders;
+        src = "${inputs.ghostty-cursor-shaders}/ghostty";
         patches = [
           cursorWarpPatch
           rippleCursorPatch
