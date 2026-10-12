@@ -45,6 +45,9 @@
       flake = false;
     };
 
+    slk.url = "github:gammons/slk";
+    slk.inputs.nixpkgs.follows = "nixpkgs";
+
     lfk.url = "github:janosmiko/lfk";
     lfk.inputs.nixpkgs.follows = "nixpkgs";
 

@@ -1,4 +1,5 @@
-_: {
+{ inputs, ... }:
+{
   flake.modules.darwin.development =
     { pkgs, ... }:
     {
@@ -13,6 +14,7 @@ _: {
         prettierd
         nixfmt
         tuios
+        inputs.slk.packages.${pkgs.stdenv.hostPlatform.system}.default
         typescript
         zulu
 
